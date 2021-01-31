@@ -36,10 +36,11 @@ class ImportTransactionsService {
       }
     });
 
+    await fs.promises.unlink(csvFilePath);
+
     return transactions;
   }
 
-  await fs.promises.unlink(csvFilePath);
 }
 
 export default ImportTransactionsService;
